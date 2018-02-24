@@ -1,22 +1,5 @@
-
-# diff --git a/modules/agent/main.go b/modules/agent/main.go
-# index 0b0c16b..81908c5 100644
---- a/modules/agent/main.go
-+++ b/modules/agent/main.go
-@@ -54,6 +54,8 @@ func main() {
-        g.InitLocalIp()
-        g.InitRpcClients()
-
-+       os.Setenv("FALCON_AGENT_RUNTIME_VERSION", g.VERSION)
-+
-        funcs.BuildMappers()
-
-        go cron.InitDataHistory()
-        
-
-
-# diff --git a/modules/agent/g/cfg.go b/modules/agent/g/cfg.go
-# index 1b0823d..e40f7ff 100644
+diff --git a/modules/agent/g/cfg.go b/modules/agent/g/cfg.go
+index 1b0823d..e40f7ff 100644
 --- a/modules/agent/g/cfg.go
 +++ b/modules/agent/g/cfg.go
 @@ -21,6 +21,8 @@ import (
@@ -58,3 +41,15 @@
  	hostname, err := os.Hostname()
  	if err != nil {
  		log.Println("ERROR: os.Hostname() fail", err)
+diff --git a/modules/agent/main.go b/modules/agent/main.go
+index 0b0c16b..82e9041 100644
+--- a/modules/agent/main.go
++++ b/modules/agent/main.go
+@@ -50,6 +50,7 @@ func main() {
+ 		g.InitLog("info")
+ 	}
+
++	os.Setenv("FALCON_AGENT_RUNTIME_VERSION", g.VERSION)
+ 	g.InitRootDir()
+ 	g.InitLocalIp()
+ 	g.InitRpcClients()
