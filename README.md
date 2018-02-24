@@ -1,9 +1,13 @@
 # falcon-plus-patch
 
+
+
+## How to Use
+
+```
 git clone falcon-plus
 cd falcon-plus
 
-## How to Use
 patch -p1 < falcon-agent.patch
 
-
+```
