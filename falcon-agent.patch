@@ -1,3 +1,20 @@
+
+# diff --git a/modules/agent/main.go b/modules/agent/main.go
+# index 0b0c16b..81908c5 100644
+--- a/modules/agent/main.go
++++ b/modules/agent/main.go
+@@ -54,6 +54,8 @@ func main() {
+        g.InitLocalIp()
+        g.InitRpcClients()
+
++       os.Setenv("FALCON_AGENT_RUNTIME_VERSION", g.VERSION)
++
+        funcs.BuildMappers()
+
+        go cron.InitDataHistory()
+        
+
+
 # diff --git a/modules/agent/g/cfg.go b/modules/agent/g/cfg.go
 # index 1b0823d..e40f7ff 100644
 --- a/modules/agent/g/cfg.go
