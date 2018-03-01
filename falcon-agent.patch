@@ -53,3 +53,19 @@ index 0b0c16b..82e9041 100644
  	g.InitRootDir()
  	g.InitLocalIp()
  	g.InitRpcClients()
+
+
+diff --git a/modules/agent/funcs/dfstat.go b/modules/agent/funcs/dfstat.go
+index 1a82699..296bea1 100644
+--- a/modules/agent/funcs/dfstat.go
++++ b/modules/agent/funcs/dfstat.go
+@@ -61,6 +61,10 @@ func DeviceMetrics() (L []*model.MetricValue) {
+                        continue
+                }
+
++               if du.FsVfstype == "iso9660" {
++                       continue
++               }
++
+                diskTotal += du.BlocksAll
+                diskUsed += du.BlocksUsed
