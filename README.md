@@ -8,7 +8,7 @@ git diff modules/agent/main.go modules/agent/g/cfg.go > falcon-agent.patch
 ## falcon-agent.patch Features
 
 + READ ENV ENDPOINT
-+ SET  ENV FALCON_AGENT_RUNTIME_VERSION
++ SET  ENV FALCON_AGENT_RUNTIME
 + IGNORE ISO MOUNT POINT
 
 ## How to Use
