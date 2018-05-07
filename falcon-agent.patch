@@ -49,7 +49,7 @@ index 0b0c16b..82e9041 100644
  		g.InitLog("info")
  	}
 
-+	os.Setenv("FALCON_AGENT_RUNTIME_VERSION", g.VERSION)
++	os.Setenv("FALCON_AGENT_RUNTIME", g.VERSION)
  	g.InitRootDir()
  	g.InitLocalIp()
  	g.InitRpcClients()
